@@ -1,6 +1,7 @@
 import { useEffect, createContext, ReactNode, useState } from "react";
 import { auth, firebase } from "../services/firebase";
 
+
 type User = {
     id: string;
     name: string;
@@ -20,7 +21,6 @@ type AuthContextProviderProps = {
 }
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
-
 
     const [user, setUser] = useState<User>();
 
@@ -46,6 +46,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
             unsubscribe();
         }
     }, [])
+
 
     async function signInWithGoogle() {
 
